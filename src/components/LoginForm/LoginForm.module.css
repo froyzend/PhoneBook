@@ -1,0 +1,84 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(44, 44, 44, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    margin: 50px auto;
+}
+
+.title {
+    color: #ffffff;
+    font-size: 26px;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.inputGroup {
+    display: flex;
+    align-items: center;
+    background-color: rgba(60, 60, 60, 0.9);
+    border: 1px solid transparent;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 100%;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.icon {
+    color: #bbb;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.input {
+    flex: 1;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.input:focus {
+    outline: none;
+    border-bottom: 2px solid #61dafb;
+
+}
+
+.errorInput {
+    border-color: #ff4d4f;
+}
+
+.errorText {
+    color: #ff4d4f;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.submitButton {
+    background: linear-gradient(90deg, #61dafb, #4fa3e3);
+    color: #2c2c2c;
+    font-size: 16px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.submitButton:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+}
+
+.submitButton:hover:enabled {
+    background: linear-gradient(90deg, #4fa3e3, #61dafb);
+    transform: scale(1.05);
+}

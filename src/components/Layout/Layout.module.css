@@ -1,0 +1,68 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+}
+
+.header {
+    border-radius: 15px;
+    padding: 15px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    filter: drop-shadow(2px 4px 10px rgba(213, 13, 13, 0.981));
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #f1f1f1;
+    /* Легкий фон при наведении */
+    color: #007bff;
+    /* Синий цвет при наведении */
+}
+
+.welcome {
+    color: #555;
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 20px;
+    /* Немного отступа перед кнопкой */
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    /* Темнее синий цвет при наведении */
+}
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+}

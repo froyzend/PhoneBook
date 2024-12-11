@@ -1,0 +1,65 @@
+.homePage {
+    text-align: center;
+    padding: 50px;
+    background-color: rgba(44, 44, 44, 0.8);
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #ff6b6b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.icon {
+    font-size: 36px;
+}
+
+.description {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.featureItem {
+    text-align: center;
+}
+
+.featureIcon {
+    font-size: 40px;
+    color: #c3b1ba;
+    margin-bottom: 10px;
+}
+
+.featureItem p {
+    font-size: 18px;
+}
+
+.linkHomePage {
+    margin-top: 20px;
+    padding: 12px 24px;
+    text-decoration: none;
+    color: white;
+    background-color: #ff6b6b;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.linkHomePage:hover {
+    background-color: #570e0e;
+}
