@@ -1,14 +1,28 @@
 .listPhone {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
-    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
     padding: 0;
     margin: 0;
 }
 
 .contactItem {
+    width: 350px;
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     list-style-type: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+.contactItem:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.contactItem p {
+    font-size: 18px;
+    /* Оптимальный размер шрифта */
+    color: #333333;
+    /* Темный текст для лучшего контраста */
 }

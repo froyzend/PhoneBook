@@ -29,7 +29,7 @@ const Contact = ({ contact }) => {
         </div>
         <div className={css.phoneInfo}>
           <FaPhone className={css.phoneIcon} />
-          <span className={css.phoneNumber}>{contact.phone}</span>
+          <span className={css.phoneNumber}>{contact.number}</span>
         </div>
       </div>
       <button className={css.deleteButton} onClick={openDeleteModal}>

@@ -9,7 +9,6 @@ const ContactsPage = () => {
 
   return (
     <div className="contacts-page">
-      <h1>Phonebook</h1>
       <ContactForm />
       <SearchBox />
       {isLoading && !error && <p className="loading-message">Loading...</p>}

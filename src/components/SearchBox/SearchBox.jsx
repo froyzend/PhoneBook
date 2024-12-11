@@ -20,6 +20,7 @@ const SearchBox = () => {
         value={filter}
         onChange={handleSearch}
         placeholder="Search contacts..."
+        className={css.searchInput}
       />
     </div>
   );

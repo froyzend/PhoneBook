@@ -1,7 +1,8 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/operations";
+import { FaUserAlt, FaEnvelope, FaLock } from "react-icons/fa";
 import css from "./RegistrationForm.module.css";
 
 const RegistrationForm = () => {
@@ -36,46 +37,62 @@ const RegistrationForm = () => {
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
-      {({ isSubmitting }) => (
+      {({ isSubmitting, touched, errors, handleChange, handleBlur }) => (
         <Form className={css.form}>
-          <label htmlFor="name">Name</label>
-          <Field
-            type="text"
-            name="name"
-            className={css.formInput}
-            placeholder="Enter your name"
-          />
-          <ErrorMessage name="name" component="div" className={css.formError} />
+          <div className={css.inputGroup}>
+            <FaUserAlt className={css.icon} />
+            <Field
+              type="text"
+              name="name"
+              className={`${css.input} ${
+                touched.name && errors.name ? css.errorInput : ""
+              }`}
+              placeholder="Enter your name"
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </div>
+          {touched.name && errors.name && (
+            <div className={css.errorText}>{errors.name}</div>
+          )}
 
-          <label htmlFor="email">Email</label>
-          <Field
-            type="email"
-            name="email"
-            className={css.formInput}
-            placeholder="Enter your email"
-          />
-          <ErrorMessage
-            name="email"
-            component="div"
-            className={css.formError}
-          />
+          <div className={css.inputGroup}>
+            <FaEnvelope className={css.icon} />
+            <Field
+              type="email"
+              name="email"
+              className={`${css.input} ${
+                touched.email && errors.email ? css.errorInput : ""
+              }`}
+              placeholder="Enter your email"
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </div>
+          {touched.email && errors.email && (
+            <div className={css.errorText}>{errors.email}</div>
+          )}
 
-          <label htmlFor="password">Password</label>
-          <Field
-            type="password"
-            name="password"
-            className={css.formInput}
-            placeholder="Enter your password"
-          />
-          <ErrorMessage
-            name="password"
-            component="div"
-            className={css.formError}
-          />
+          <div className={css.inputGroup}>
+            <FaLock className={css.icon} />
+            <Field
+              type="password"
+              name="password"
+              className={`${css.input} ${
+                touched.password && errors.password ? css.errorInput : ""
+              }`}
+              placeholder="Enter your password"
+              onChange={handleChange}
+              onBlur={handleBlur}
+            />
+          </div>
+          {touched.password && errors.password && (
+            <div className={css.errorText}>{errors.password}</div>
+          )}
 
           <button
             type="submit"
-            className={css.formButton}
+            className={css.submitButton}
             disabled={isSubmitting}
           >
             {isSubmitting ? "Registering..." : "Register"}
