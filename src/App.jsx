@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchContacts } from "./redux/contacts/operations";
 import { Route, Routes } from "react-router-dom";
 import PrivateRoute from "./components/Privat/PrivateRoute";
 import RestrictedRoute from "./components/Privat/RestrictedRoute";
@@ -9,13 +8,14 @@ import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegistrationPage from "./pages/RegistrationPage/Registration";
 import Layout from "./components/Layout/Layout";
+import { refreshUser } from "./redux/auth/operations";
 
 function App() {
   const dispatch = useDispatch();
   const isRefreshing = useSelector((state) => state.auth.isRefreshing);
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(refreshUser());
   }, [dispatch]);
 
   if (isRefreshing) {

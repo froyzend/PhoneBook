@@ -6,13 +6,6 @@ import { useSelector } from "react-redux";
 const ContactsPage = () => {
   const isLoading = useSelector((state) => state.contacts.isLoading);
   const error = useSelector((state) => state.contacts.error);
-  const token = useSelector((state) => state.auth.token);
-
-  if (!token) {
-    return (
-      <p className="error-message">You must be logged in to access contacts.</p>
-    );
-  }
 
   return (
     <div className="contacts-page">
