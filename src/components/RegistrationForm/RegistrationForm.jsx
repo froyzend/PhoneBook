@@ -14,20 +14,25 @@ const RegistrationForm = () => {
     password: "",
   };
 
-  const validationSchema = Yup.object({
+  const validationSchema = Yup.object().shape({
     name: Yup.string()
-      .min(3, "Name must be at least 3 characters")
-      .required("Name is required"),
-    email: Yup.string()
-      .email("Invalid email address")
-      .required("Email is required"),
+      .min(2, "Too Short!")
+      .max(50, "Too Long!")
+      .required("Required"),
+    email: Yup.string().email("Invalid email").required("Required"),
     password: Yup.string()
-      .min(6, "Password must be at least 6 characters")
-      .required("Password is required"),
+      .min(7, "Password must be at least 7 characters")
+      .required("Required"),
   });
 
   const handleSubmit = (values, { resetForm }) => {
-    dispatch(register(values));
+    dispatch(
+      register({
+        name: values.name,
+        email: values.email,
+        password: values.password,
+      })
+    );
     resetForm();
   };
 

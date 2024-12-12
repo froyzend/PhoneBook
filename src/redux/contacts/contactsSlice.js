@@ -23,10 +23,10 @@ const contactsSlice = createSlice({
         state.error = payload;
       })
       .addCase(addContact.fulfilled, (state, { payload }) => {
-        state.items.push(payload); // добавление нового контакта
+        state.items.push(payload);
       })
       .addCase(deleteContact.fulfilled, (state, { payload }) => {
-        state.items = state.items.filter((contact) => contact.id !== payload); // удаление контакта
+        state.items = state.items.filter((contact) => contact.id !== payload);
       });
   },
 });
