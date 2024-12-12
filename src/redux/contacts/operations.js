@@ -11,7 +11,6 @@ export const clearAuthHeader = () => {
   axios.defaults.headers.common.Authorization = "";
 };
 
-// Получение контактов
 export const fetchContacts = createAsyncThunk(
   "contacts/fetchContacts",
   async (_, { getState, rejectWithValue }) => {
@@ -32,7 +31,6 @@ export const fetchContacts = createAsyncThunk(
   }
 );
 
-// Добавление контакта
 export const addContact = createAsyncThunk(
   "contacts/addContact",
   async (contact, { getState, rejectWithValue }) => {

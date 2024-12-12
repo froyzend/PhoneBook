@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchContacts } from "./redux/contacts/operation";
+import { fetchContacts } from "./redux/contacts/operations";
 import { Route, Routes } from "react-router-dom";
 import PrivateRoute from "./components/Privat/PrivateRoute";
 import RestrictedRoute from "./components/Privat/RestrictedRoute";

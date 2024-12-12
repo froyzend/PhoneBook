@@ -3,7 +3,7 @@ import css from "./Contact.module.css";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import ConfirmModal from "../Modal/ConfirmModal";
-import { deleteContact } from "../../redux/contacts/operation";
+import { deleteContact } from "../../redux/contacts/operations";
 
 const Contact = ({ contact }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);

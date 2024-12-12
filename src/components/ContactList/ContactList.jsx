@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
-import { selectFilteredContacts } from "../../redux/contacts/contactsSlice";
+import { selectFilteredContacts } from "../../redux/contacts/selectors";
 import css from "./ContactList.module.css";
 import Contact from "../Contact/Contact";
 
 const ContactList = () => {
   const filteredContacts = useSelector(selectFilteredContacts);
-  const isLoading = useSelector((state) => state.contacts.isLoading);
+  const isLoading = useSelector((state) => state.contacts.loading);
   const error = useSelector((state) => state.contacts.error);
 
   return (
@@ -15,10 +15,10 @@ const ContactList = () => {
         <p className={css.errorMessage}>Error loading contacts: {error}</p>
       )}
       <ul className={css.listPhone}>
-        {filteredContacts.length > 0 ? (
+        {filteredContacts && filteredContacts.length > 0 ? (
           filteredContacts.map((contact) => (
             <li key={contact.id} className={css.contactItem}>
-              <Contact key={contact.id} contact={contact} />
+              <Contact contact={contact} />
             </li>
           ))
         ) : (
