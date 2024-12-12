@@ -34,6 +34,7 @@ const ContactForm = () => {
       validationSchema={schema}
     >
       <Form className={css.Form}>
+        <h1>Add contact</h1>
         <div className={css.field}>
           <label htmlFor="name">Name</label>
           <Field id="name" name="name" placeholder="Name" />

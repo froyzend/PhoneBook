@@ -24,6 +24,7 @@ const modalStyle = {
   width: 300,
   bgcolor: "background.paper",
   boxShadow: 24,
+  borderRadius: 10,
   p: 4,
 };
 
