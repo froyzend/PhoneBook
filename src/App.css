@@ -16,3 +16,7 @@
   font-style: italic;
   margin: 10px 0;
 }
+
+a {
+  text-decoration: none;
+}

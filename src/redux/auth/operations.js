@@ -11,7 +11,7 @@ const clearAuthHeader = () => {
   axios.defaults.headers.common.Authorization = "";
 };
 
-export const register = createAsyncThunk(
+export const registration = createAsyncThunk(
   "auth/register",
   async (credentials, thunkAPI) => {
     try {
@@ -48,20 +48,25 @@ export const logout = createAsyncThunk("auth/logout", async (_, thunkAPI) => {
 
 export const refreshUser = createAsyncThunk(
   "auth/refresh",
-  async (_, thunkAPI) => {
-    const state = thunkAPI.getState();
+  async (_, thunkApi) => {
+    const state = thunkApi.getState();
     const persistedToken = state.auth.token;
 
-    if (persistedToken === null) {
-      return thunkAPI.rejectWithValue("Unable to fetch user");
+    if (!persistedToken) {
+      return thunkApi.rejectWithValue("No token found");
     }
 
     try {
       setAuthHeader(persistedToken);
-      const res = await axios.get("/users/current");
-      return res.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
+      console.log("Token being sent:", persistedToken);
+
+      const response = await axios("/users/current");
+      return response.data;
+    } catch (e) {
+      console.error("Refresh error:", e.response?.data || e.message);
+      const errorMessage =
+        e.response?.data?.message || "Unable to refresh user";
+      return thunkApi.rejectWithValue(errorMessage);
     }
   }
 );

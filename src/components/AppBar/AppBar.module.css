@@ -1,0 +1,16 @@
+.header {
+    border-radius: 15px;
+    padding: 15px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    filter: drop-shadow(2px 4px 10px rgba(213, 13, 13, 0.981));
+}
+
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+}

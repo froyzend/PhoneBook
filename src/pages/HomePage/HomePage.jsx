@@ -19,7 +19,7 @@ const HomePage = () => {
           <p>Delete Contacts</p>
         </div>
       </div>
-      <a href="/register" className={css.linkHomePage}>
+      <a href="/registration" className={css.linkHomePage}>
         Go to Register Page
       </a>
     </div>

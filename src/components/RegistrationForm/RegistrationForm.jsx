@@ -1,7 +1,7 @@
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
-import { register } from "../../redux/auth/operations";
+import { registration } from "../../redux/auth/operations";
 import { FaUserAlt, FaEnvelope, FaLock } from "react-icons/fa";
 import css from "./RegistrationForm.module.css";
 
@@ -27,7 +27,7 @@ const RegistrationForm = () => {
 
   const handleSubmit = (values, { resetForm }) => {
     dispatch(
-      register({
+      registration({
         name: values.name,
         email: values.email,
         password: values.password,

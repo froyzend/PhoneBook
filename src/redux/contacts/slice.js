@@ -31,5 +31,4 @@ const contactsSlice = createSlice({
   },
 });
 
-// Экспортируем редьюсер по умолчанию
 export default contactsSlice.reducer;

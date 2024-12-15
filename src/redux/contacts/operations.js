@@ -1,14 +1,16 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-axios.defaults.baseURL = "https://connections-api.goit.global";
+const api = axios.create({
+  baseURL: "https://connections-api.goit.global",
+});
 
 const setAuthHeader = (token) => {
-  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+  api.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
 export const clearAuthHeader = () => {
-  axios.defaults.headers.common.Authorization = "";
+  api.defaults.headers.common.Authorization = "";
 };
 
 export const fetchContacts = createAsyncThunk(
@@ -23,7 +25,7 @@ export const fetchContacts = createAsyncThunk(
     setAuthHeader(token);
 
     try {
-      const { data } = await axios.get("/contacts");
+      const { data } = await api.get("/contacts");
       return data;
     } catch (error) {
       return rejectWithValue(error.response?.data?.message || error.message);
@@ -43,7 +45,7 @@ export const addContact = createAsyncThunk(
     setAuthHeader(token);
 
     try {
-      const { data } = await axios.post("/contacts", contact);
+      const { data } = await api.post("/contacts", contact);
       return data;
     } catch (error) {
       return rejectWithValue(error.response?.data?.message || error.message);
@@ -63,7 +65,7 @@ export const deleteContact = createAsyncThunk(
     setAuthHeader(token);
 
     try {
-      await axios.delete(`/contacts/${contactId}`);
+      await api.delete(`/contacts/${contactId}`);
       return contactId;
     } catch (error) {
       return rejectWithValue(error.response?.data?.message || error.message);
