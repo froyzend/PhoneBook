@@ -1,8 +1,26 @@
-# React + Vite
+📞 Phonebook with Authentication
+🔒 The Phonebook is a web application for storing contacts with user registration and authentication functionality.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Features
+✅ User registration and login
+✅ Add, edit, and delete contacts
+✅ Search contacts by name
+✅ Store user data
+✅ User-friendly and responsive interface
 
-Currently, two official plugins are available:
+🛠 Technologies
+Frontend: React, Redux, React Router
+Styles: CSS Modules / Styled Components
+Requests: Axios
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔐 Authentication
+
+Register in the application
+Log in using email and password
+Once logged in, you gain access to manage contacts
+
+
+📌 Contacts
+👨‍💻 Author: Kateryna Frolova
+📧 Email: froyzend1993@gmail.com
+
